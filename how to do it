@@ -1,0 +1,18 @@
+3 class
+
+1 ball
+1 board (user control)
+x tiles
+
+ball (bounces on collison with top right left board and tiles
+   rules of collision :
+   1. is angel is collision is 90 degree then follow the path back
+   2. is angle is greater than 90 subtract 90 degree or add 90
+
+
+
+score counting :  if it hits tiles += 1  elif hits bottom game over
+
+tiles : bounces the ball and disappears
+
+
