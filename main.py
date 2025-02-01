@@ -40,6 +40,7 @@ def gettiles(tar_x,tar_y,threshhold):
         if t.distance(tar_x, tar_y) < threshhold:
             selected.append(t)
             t.hideturtle()
+            tiles.remove(t)
             t.clear()
             return True
             # print("hii")
@@ -50,12 +51,12 @@ while game_status:
         x.ybounce()
     elif x.xcor() > 390 or x.xcor() < -390:
         x.xbounce()
-    elif x.distance(player) < 30 and x.ycor() > - 290:
+    elif x.y_move < 0 and x.distance(player) < 30 and x.ycor() > - 290:
         x.ybounce()
     elif x.ycor() < -287:
         print("game over")
         game_status = False
-    elif gettiles(x.xcor(), x.ycor(), 10):
+    elif x.y_move > 0 and gettiles(x.xcor(), x.ycor(), 10):
         x.ybounce()
     elif x.ycor() < -290:
         game_status= False
